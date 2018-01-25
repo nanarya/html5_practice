@@ -1,5 +1,5 @@
 //定数
-var FPS = 60;
+var FPS = 240;
 var SCREEN_WIDTH = window.innerWidth;
 var SCREEN_HEIGHT =window.innerHeight;
 var GRAVITY = 0;
@@ -9,6 +9,12 @@ var ctx;
 var particleList = [];
 var mx = null;
 var my = null;
+var mx1 = null;
+var my1 = null;
+var mx2 = null;
+var my2 = null;
+var posFlg = 0;
+var isMove = true;
 
 //コンストラクタ
 var Particle = function (x, y) {
@@ -21,6 +27,10 @@ Particle.prototype = {
   //プロパティ
   x: null,
   y: null,
+  r: 0,
+  g: 0,
+  b: 0,
+  a: 0,
   vx: 0,
   vy: 0,
   radius: 0,
@@ -32,25 +42,26 @@ Particle.prototype = {
     this.vx = Math.random() * 2 - 1;
     this.vy = Math.random() * 2 - 1;
     this.radius = Math.random() * 2 + 1;
-    var r = Math.floor(Math.random() * 100 + 155);
-    var g = Math.floor(Math.random() * 100 + 155);
-    var b = Math.floor(Math.random() * 100 + 155);
-    var a = Math.round(Math.random() * 10) / 10;
-    this.color = "rgba(" + r + ","+ g + "," + b + "," + a + ")";
+    r = Math.floor(Math.random() * 150 + 105);
+    g = Math.floor(Math.random() * 150 + 105);
+    b = Math.floor(Math.random() * 150 + 105);
+    this.a = Math.round(Math.random() * 10) / 10;
+    this.color = "rgba(" + r + ","+ g + "," + b + "," + this.a + ")";
+    if(isMove == false){
+      this.isRemove = true;
+    }
   },
 
   //位置を更新
   update: function () {
     this.vy += GRAVITY;
+    this.a -= 0.02;
+    //this.color = "rgba(" + r + ","+ g + "," + b + "," + this.a + ")";
     this.x += this.vx;
     this.y += this.vy;
     this.radius += .01;
-    this.a -= .05;
     //パーティクルが画面の外に出たとき削除フラグを立てる
-    if (this.x < 0 || this.x > SCREEN_WIDTH || this.y > SCREEN_HEIGHT) {
-      this.isRemove = true;
-    }
-    if (this.a < 0) {
+    if (this.x < 0 || this.x > SCREEN_WIDTH || this.y > SCREEN_HEIGHT || this.a < 0) {
       this.isRemove = true;
     }
   },
@@ -93,6 +104,25 @@ var updateMousePos = function (e) {
   my = e.clientY - rect.top;
 };
 
+setInterval('xyMove()',10);
+//マウスが動いているか判定
+function xyMove () {
+  if(posFlg == 0){
+  mx1 = mx;
+    my1 = my;
+    posFlg = 1;
+  }else{
+    mx2 = mx;
+    my2 = my;
+    posFlg = 0;
+  }
+  if (mx1 == mx2 && my1 == my2) {
+    isMove = false;
+  }else{
+    isMove = true;
+  }
+}
+
 //マウスの位置をリセット
 var resetMousePos = function (e) {
   mx = null;
@@ -134,7 +164,7 @@ var update = function () {
 //パーティクルの描画
 var draw = function () {
   //背景を描画
-  ctx.fillStyle = "rgba(0, 0, 0, 0)";
+  ctx.fillStyle = "rgb(0, 0, 0)";
   ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
   //パーティクルを描画
   ctx.save();
