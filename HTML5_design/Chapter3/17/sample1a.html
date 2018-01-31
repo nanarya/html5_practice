@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Sample1a | Responsive Navigation</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+<!-- ▼ウェブフォントをgoogle fontsから読み込む -->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Marcellus">
+<!-- ▼アイコンフォント（ウェブフォント「font-awesome」）用のCSS -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- ▼ブラウザごとのスタイルの差異を補正するCSS -->
+<link rel="stylesheet" href="css/normalize.css">
+<!-- ▼今回のサンプルのCSS -->
+<link rel="stylesheet" href="css/style1a.css">
+
+<!-- ▼ブラウザごとの挙動の差異を制御しやすくするJavascript -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<header role="banner" id="headerContainer">
+<div id="headerContainer_inner" class="inner">
+
+<div id="siteID">
+<h1>Moony Interactive</h1>
+<p class="description">レスポンシブナビゲーションサンプル</p>
+</div>
+<!--/ siteID -->
+
+</div>
+<!--/ headerContainer_inner END -->
+
+<nav role="navigation" id="mainNavigation">
+<ul class="inner clearfix">
+<li class="current"><a href="#" title="HOME"><span class="fa fa-home"><span>HOME</span></span></a></li>
+<li><a href="news/" title="NEWS"><span class="fa fa-file-text-o"><span>NEWS</span></span></a>
+  <ul>
+  <li><a href="#" title="INFO">INFO</a></li>
+  <li><a href="#" title="EVENT">EVENT</a></li>
+  </ul>
+</li>
+<li><a href="#" title="PROFILE"><span class="fa fa-user"><span>PROFILE</span></span></a></li>
+<li><a href="#" title="GALLERY"><span class="fa fa-th-large"><span>GALLERY</span></span></a></li>
+<li><a href="#" title="ACCESS"><span class="fa fa-map-marker"><span>ACCESS</span></span></a></li>
+<li><a href="#" title="CONTACT"><span class="fa fa-envelope-o"><span>CONTACT</span></span></a></li>
+</ul>
+</nav>
+
+</header>
+<!--/ headerContainer -->
+
+<div id="mainVisualContainer">
+<div class="inner">
+<img src="img/img_mainvisual.jpg" alt="">
+</div>
+</div>
+<!--/ mainVisualContainer -->
+
+<section id="contentContainer" class="inner">
+<div id="contentContainer_inner">
+<h1>Sample1a サブナビゲーションも最初から表示</h1>
+</div>
+</section>
+<!--/contentContainer -->
+
+<footer id="footerContainer">
+<div class="inner">
+<p id="copyright">Copyright&copy; Moony All Rights Reserved.</p>
+</div>
+</footer>
+<!--/ footerContainer -->
+
+<!-- ▼jQueryをCDNから読み込むが、フォールバックとしてローカルでも読み込めるように準備する -->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<!-- ▼古いIEなどのセレクタの実装が不十分なレガシーブラウザでも疑似セレクタが利用できるようにするJavascript -->
+<script src="js/selectivizr-min.js"></script>
+<!-- ▼今回のサンプルのJavascript -->
+<script src="js/script1.js"></script>
+</body>
+</html>

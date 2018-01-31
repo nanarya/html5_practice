@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>各種ローディング</title>
+<style>
+article {
+	overflow:hidden;
+}
+section {
+	width:150px;
+	display:inline-block;
+	float:left;
+	text-align:center;
+	margin-bottom:40px;
+	margin-left:40px;
+	border:1px solid #000;
+	padding-bottom: 20px;
+}
+section h1 {
+	margin-top:0;
+	background:#444;
+	color:#FFF;
+	font-size:12px;
+	padding:4px 0;
+}
+section span {
+	margin-right:auto;
+	margin-left:auto;
+}
+</style>
+</head>
+<body>
+<article>
+<h1>各種ローディング テストページ</h1>
+<section>
+	<h1>アニメーションGIF</h1>
+	<img src="img/loading.gif">
+</section>
+<section>
+	<h1>Flash</h1>
+	<embed src="img/loading.swf" width="128" height="128">
+</section>
+<section>
+	<h1>CSS3</h1>
+	<span id="css3_anime"></span>
+	<style scoped>
+	#css3_anime {
+		display:block;
+		width:128px;
+		height:128px;
+		overflow:hidden;
+		background:url(img/sprites.gif);
+		-moz-animation:css3_anime 1.5s steps(11,end) infinite;
+		-webkit-animation:css3_anime 1.5s steps(11,end) infinite;
+		animation:css3_anime 1.5s steps(11,end) infinite;
+	}
+	@-moz-keyframes css3_anime {
+		100% {background-position:-1408px;}
+	}
+	@-webkit-keyframes css3_anime {
+		100% {background-position:-1408px;}
+	}
+	@keyframes css3_anime {
+		100% {background-position:-1408px;}
+	}
+	</style>
+</section>
+<section>
+	<h1>Javascript</h1>
+	<span id="js_anime"></span>
+	<style scoped>
+	#js_anime {
+		display:block;
+		width:128px;
+		height:128px;
+		overflow:hidden;
+		background:url(img/sprites.gif);
+	}
+	</style>
+	<script>
+	(function(){
+		var cnt = 0;
+		var loadingAnime = function(){
+			cnt++;
+			setTimeout(
+				function(){
+					document.getElementById('js_anime').style.backgroundPosition = -1 * cnt * 128 + "px";
+					loadingAnime();
+				},
+			100);
+			if(cnt>=12) {cnt=0};
+		};
+		loadingAnime();
+	})();
+	</script>
+</section>
+<section>
+	<h1>Canvas</h1>
+	<canvas id="canvas" width="128" height="128">browser doesn't support canvas</canvas>
+	<script type="text/javascript">
+	(function(){
+		var cnt = 0;
+		var canvas = document.getElementById('canvas'),
+			ctx = canvas.getContext('2d'),
+			img = new Image();
+			img.src = "img/sprites.gif";
+		var loadingAnimeCanvas = function(){
+			cnt++;
+			setTimeout(
+				function(){
+					ctx.clearRect(0, 0, 128, 128);
+					ctx.drawImage(img, cnt*128, 0, 128, 128, 0, 0, 128, 128);
+					loadingAnimeCanvas();
+				},
+			100);
+			if(cnt>=12) {cnt=0};
+		};
+		loadingAnimeCanvas();
+	})();
+	</script>
+</section>
+</article>
+</body>
+</html>

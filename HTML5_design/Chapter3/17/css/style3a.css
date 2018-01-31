@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+/*
+common styles
+*/
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+	position: relative;
+	min-height: 100%;
+	overflow: auto;
+  background: #fefdfa;
+	-webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+h1,li,dl,dt,dd,p,span,a {
+	font-family: 'Marcellus', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	color: #4D280F;
+	margin: 0;
+	padding: 0;
+}
+
+a,
+input[type="text"],
+input[type="search"],
+button span {
+	-webkit-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #cc3a38;
+}
+
+ul,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* clearfix */
+.clearfix:after{
+	visibility:hidden;
+	height:0;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* 見た目は非表示になるが、スクリーンリーダーでは認識される */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+layout
+*/
+
+.inner {
+	width: 960px;
+	min-width: 960px;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#headerContainer {
+	position: relative;
+}
+
+#headerContainer_inner {
+	position: relative;
+	top: 0;
+	margin-bottom: 8px;
+}
+
+#siteID {
+	padding: 24px 0 0;
+}
+
+#siteID h1 {
+	font-size: 2.8em;
+	font-weight: 400;
+	margin-bottom: 0.1em;
+}
+
+#siteID .description {
+	font-size: 1.2em;
+}
+
+.utilitiesContainer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.4em;
+}
+
+.utilitiesContainer .switch {
+	display: none;
+	cursor: pointer;
+}
+
+/* ソーシャルリンク */
+.widget_socialLinks {
+	text-align: right;
+	margin: 15px 0 4px;
+}
+.widget_socialLinks li {
+	display: inline-block;
+	font-size: 2em;
+}
+
+.widget_socialLinks li span {
+	color: inherit;
+}
+
+
+/* サイト内検索 */
+.widget_search {
+	width: 240px;
+	text-align: right;
+}
+.widget_search form {
+	position: relative;
+	width: 100%
+}
+.widget_search .search-field {
+  display: block;
+  width: 80%;
+  color: #ccc;
+  line-height: 1.1;
+  margin-left: auto;
+  padding: 0.4em 10% 0.2em 5%;
+  border-radius: 8px;
+  border: 1px solid #deddda;
+  background: #fafafa;
+}
+.widget_search input.search-field:focus {
+	outline: none;
+	color: #3c3a38;
+  background: #fff;
+}
+.widget_search button {
+  position: absolute;
+	top: 15%;
+  right: 3%;
+  width: 1.5em;
+  font-size: 1.2em;
+  line-height: 1;
+  color: #ccc;
+  background: none;
+  border: none;
+}
+.widget_search button > span {
+	color: inherit;
+}
+.widget_search input.search-field:focus + button > span {
+	color: #3c3a38;
+}
+
+
+/* ナビゲーション */
+#mainNavigation {
+	margin: 24px 0 16px;
+	font-size: 1.4em;
+	background: #4C2A0F;
+}
+
+/* 親メニュー、サブメニュー共通設定 */
+#mainNavigation ul li a {
+	display: block;
+	color: #CAAD98;
+	text-align: center;
+	padding: 0.5em;
+}
+#mainNavigation ul li.current a,
+#mainNavigation ul li a:hover {
+	color: #fAdDc8;
+	background: #6B3F1B;
+}
+
+/* 親メニュー設定 */
+#mainNavigation > ul > li {
+	position: relative;
+	float: left;
+	width: 16.6%;
+	margin: 4px 0;
+}
+#mainNavigation > ul > li:last-child {
+	width: 17%;
+}
+#mainNavigation > ul > li > a {
+	/* 親メニューのみ右に区切り線（ハイライト）*/
+	border-right: 1px solid #6D482F;
+}
+#mainNavigation > ul > li:not(:last-child) > a:after {
+	/* 親メニューのみ右に区切り線（シャドウ）*/
+	position: absolute;
+	top: 0;
+	content: '';
+	right: 1px;
+	width: 1px;
+	height: 100%;
+	border-right: 1px solid #2D0803;
+}
+#mainNavigation > ul > li:last-child a {
+	border-right: none;
+}
+
+#mainNavigation > ul > li span {
+	/* 親メニューのみアイコンフォントのspan要素ををブロック要素に */
+	display: block;
+	line-height: 1.5;
+	color: inherit;
+}
+#mainNavigation li span > span {
+	display: block;
+	color: inherit;
+}
+
+/* サブメニュー設定 */
+#mainNavigation li ul {
+	/* サブメニューリストの位置。親メニューの直下に表示で通常非表示 */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-top: 2px;
+  overflow: hidden;
+}
+#mainNavigation li ul li {
+  /* 個々のサブメニューは、通常時はheightを0、overflow:hidden に設定して非表示にする */
+	float: none;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .2s linear;
+	transition: height .2s linear;
+}
+#mainNavigation li ul li:last-child {
+	width: 100%;
+}
+#mainNavigation li.current ul li a,
+#mainNavigation li ul li a {
+  /* 個々のサブメニューのa要素の基本設定 */
+  position: relative;
+  text-align: center;
+	border-width: 0;
+  opacity: 0;
+ 	padding: 0.75em 0;
+  border-top: 1px solid #6D482F;
+}
+#mainNavigation.notouch li:hover ul li,
+#mainNavigation li.visible:hover ul li,
+#mainNavigation li.visible ul li {
+  /* サブメニュー表示時（プルダウン時）の設定 */
+  overflow: visible;
+  height: 38px;
+}
+#mainNavigation.notouch li:hover ul li a,
+#mainNavigation li.visible:hover ul li a,
+#mainNavigation li.visible ul li a {
+  /* サブメニュー表示時（プルダウン時）のa要素の設定 */
+	opacity: 1;
+	background: #583417;
+}
+#mainNavigation.notouch li:hover ul li a:hover,
+#mainNavigation li.visible:hover ul li a:hover,
+#mainNavigation li.visible ul li a:hover {
+  /* サブメニュー自体にマウスオン時の設定 */
+	background: #785437;
+}
+
+/* メインビジュアル領域 */
+#mainVisualContainer {
+  background: #f8f6f5;
+}
+
+#mainVisualContainer img {
+	width: 100%;
+}
+
+/* コンテンツ領域 */
+#contentContainer {
+	position: relative;
+	padding-bottom: 60px;
+}
+#contentContainer_inner {
+	margin: 20px auto;
+	padding: 12px;
+  background: #f8f6f5;
+}
+
+/* フッター */
+#footerContainer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+  z-index: 100;
+	width: 100%;
+	background: #000;
+  padding: 1em 0;
+}
+
+#copyright{
+  color: #fff;
+	text-align: center;
+  font-size: 1.4em;
+  margin: 0;
+}
+
+
+/*
+IE7以下用の設定
+*/
+
+html*#mainNavigation li {
+	margin: 0;
+}
+html*#mainNavigation li a {
+	padding: 1em 0;
+	zoom: 1;
+}
+html*#mainNavigation li ul {
+	padding: 0;
+}
+html*#mainNavigation li span,
+html*#mainNavigation li span,
+html*#mainNavigation li ul li a {
+	color: #CAAD98;
+}
+
+html*.widget_socialLinks li a:hover span,
+html*#mainNavigation li.current span,
+html*#mainNavigation li:hover span,
+html*#mainNavigation li.current span > span,
+html*#mainNavigation li:hover span > span,
+html*#mainNavigation li ul li a:hover
+{
+	color: #fAdDc8;
+}
+html*#mainNavigation li ul li a {
+	zoom: 1;
+}
+html*.widget_socialLinks {
+	display: none;
+}
+html*.utilitiesContainer {
+	top: 32px;
+}
+
+
+/*
+Responsive styles
+*/
+
+@media only screen and (max-width: 768px) {
+
+	.inner {
+		width: 96%;
+		max-width: 96%;
+		min-width: 96%;
+	}
+}
+
+@media only screen and (max-width: 599px) {
+
+	.inner {
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+
+	#headerContainer_inner {
+		margin-bottom: 0;
+		padding-bottom: 8px;
+	}
+	#siteID {
+		font-size: 0.8em;
+		text-align: center;
+		padding: 8px 0 4px;
+	}
+	.utilitiesContainer .switch {
+		/* メニュー開閉用ボタン */
+		display: block;
+		position: absolute;
+		right: 4px;
+		top: -1.75em;
+		width: 1em;
+		height: 1em;
+		font-size: 2em;
+	}
+
+	/* メニューが閉まっているときに非表示にする要素 */
+
+	.utilitiesContainer {
+		position: relative;
+		background: rgba( 0, 0, 0, 0.05);
+		box-shadow: inset 2px 0 2px 0 rgba( 0, 0, 0, 0.1);
+	}
+	.utilitiesContainer .widget,
+	#mainNavigation li {
+		height: 0;
+		min-height: 0;
+		margin: 0 auto;
+		overflow: hidden;
+		-webkit-transition: height .2s linear;
+		transition: height .2s linear;
+	}
+	#mainNavigation {
+		margin: 0 0 1px;
+	}
+
+	/* メニューが開いているときに表示される要素 */
+
+	.utilitiesContainer.visible .widget {
+		height: 54px;
+		line-height: 1.5;
+		overflow: visible;
+	}
+	.utilitiesContainer .widget_socialLinks {
+		text-align: center;
+		font-size: 1.4em;
+	}
+	.utilitiesContainer .widget_search {
+		text-align: center;
+		width: 90%;
+		font-size: 1.4em;
+		margin: 0 auto;
+	}
+
+	/* 親メニュー設定 */
+	#mainNavigation > ul > li {
+		margin: 0;
+	}
+	#mainNavigation.visible > ul > li {
+		min-height: 64px;
+		height: 64px;
+		overflow: visible;
+		-webkit-transition: all .25s linear;
+    transition: all .25s linear;
+	}
+	#mainNavigation.visible > ul > li.visible {
+		height: 100%;
+	}
+	#mainNavigation > ul > li,
+	#mainNavigation > ul > li:last-child {
+		float: left;
+		width: 50%;
+	}
+	#mainNavigation > ul > li:nth-child(odd) {
+		clear: left;
+	}
+	#mainNavigation > ul > li > a {
+		padding: 0.75em 0;
+	}
+	#mainNavigation > ul > li a {
+		/* 親メニューのみ右に区切り線（ハイライト）*/
+		border-bottom: 1px solid #6D482F;
+	}
+	#mainNavigation ul > li:nth-child(even) > a {
+		border-right: none;
+	}
+	#mainNavigation > ul > li:last-child a {
+		border-right: none;
+	}
+
+	/* サブナビゲーション設定 */
+	#mainNavigation li ul li,
+	#mainNavigation li:hover ul li {
+		min-height: 0;
+		height: 0;
+	}
+
+	#mainNavigation li ul {
+		display:none ;
+	}
+
+	#contentContainer_inner {
+		margin: 1% 1% 20px;
+		padding: 4%;
+	}
+	#copyright{
+	  font-size: 1.2em;
+	}
+
+}
+

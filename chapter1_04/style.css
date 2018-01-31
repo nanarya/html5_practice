@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+#content {
+  width: 900px;
+  margin: 50px auto;
+}
+#nocanvas {
+  margin-top: 80px;
+  margin-left: 20px;
+}

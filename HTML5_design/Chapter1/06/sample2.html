@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>画像遅延ローディングサンプル</title>
+<style>
+body {
+	text-align:center;
+}
+img#img-stage {
+	background:url(img/loading.gif) no-repeat center center;
+	background-size:20px;
+}
+section {
+	margin-bottom:40px;
+}
+section > div {
+	margin-top:20px;
+}
+button {
+	cursor:pointer;5
+}
+#img-stage2-parent {
+	display:inline-block;
+	background:url(img/loading.gif) no-repeat center center;
+	background-size:20px;
+}
+</style>
+</head>
+<body>
+<article>
+	<h1>画像遅延ローディングサンプル</h1>
+	<section>
+		<h1>imgタグに背景として</h1>
+		<img id="img-stage" width="400" height="300" alt="">
+		<div>
+			<button id="img-load">画像読み込み</button>
+		</div>
+	</section>
+	<section>
+		<h1>imgタグの親要素に背景として</h1>
+		<div id="img-stage2-parent">
+			<img id="img-stage2" width="400" height="300" alt="">
+		</div>
+		<div>
+			<button id="img-load2">画像読み込み</button>
+		</div>
+	</section>
+</article>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+(function(){
+	$(document).on("click","#img-load",function(){
+		$("#img-stage").attr("src","img/photo.jpg");
+	});
+	$(document).on("click","#img-load2",function(){
+		$("#img-stage2")
+			.css({opacity:0})
+			.attr("src","img/photo2.jpg")
+			.animate({opacity:1},1000);
+	});
+})();
+</script>
+</body>
+</html>

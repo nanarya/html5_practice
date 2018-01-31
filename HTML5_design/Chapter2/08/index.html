@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>image effect</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css">
+</head>
+<body>
+
+<div id="contentArea">
+    <div class="toolsArea">
+        <h2 class="ttlContents">ファイル選択：</h2>
+        <div class="btn-file">
+            ファイル選択
+            <input type="file" id="upload">
+        </div>
+
+        <!-- 文字入力 -->
+        <h2 class="ttlContents">エフェクト：</h2>
+        <ul class="inputRadioArea clearfix">
+            <li><input type="radio" name="effect" value="reset" id="reset" /><label for="reset">リセット</label></li>
+            <li><input type="radio" name="effect" value="monochrome" id="monochrome" /><label for="monochrome">モノクロ</label></li>
+            <li><input type="radio" name="effect" value="sepia" id="sepia" /><label for="sepia">セピア</label></li>
+            <li><input type="radio" name="effect" value="reverse" id="reverse" /><label for="reverse">ネガポジ反転</label></li>
+        </ul>
+
+        <h2 class="ttlContents">明度：</h2>
+        <div id="briteness"></div>
+    <!-- /.toolArea -->
+    </div>
+
+    <!-- 描画用のcanvas -->
+    <div id="viewArea">
+        <canvas id="fileCv" class="effectViewCv"></canvas>
+    </div>
+
+    <!-- 画像を保存する -->
+    <button id="save" class="btnSave">画像化</button>
+
+</div>
+
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function() {
+      $("#briteness").slider({
+          value: 0, //初期値
+          min: -1,
+          max: 1,
+          step: 0.01
+      });
+    });
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

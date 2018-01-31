@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+html {
+height: 100%;
+}
+body {
+height: 100%;
+background: #E3D2B5 url(../img/back.svg) no-repeat center -35px;
+background-size: 374px;
+position: relative;
+}
+body.short {
+background-position: center -60px;
+}
+section {
+width: 100%;
+height: 288px;
+position: absolute;
+top: 187px;
+}
+body.short section {
+top: 162px;
+}
+.controller button {
+background-color: transparent;
+background-repeat: no-repeat;
+background-position: center center;
+margin: 0;
+padding: 0;
+border: none;
+position: absolute;
+width: 80px;
+height: 75px;
+line-height: 75px;
+left: 50%;
+font-size: 32px;
+
+}
+.controller button#minusCount {
+bottom: 0;
+margin-left: -100px;
+background-image: url(../img/minus.png);
+background-size: 77px;
+
+}
+.controller button#clear {
+bottom: 0;
+margin-left: 10px;
+background-image: url(../img/clear.png);
+background-size: 70px;
+}
+#plusCount {
+font-size: 72px;
+width: 100px;
+height: 93px;
+top: 0;
+left: 50%;
+margin-left: -50px;
+background-image: url(../img/plus.png);
+background-size: 97px;
+}
+
+
+#count {
+position: absolute;
+top: 90px;
+width: 100%;
+height: 110px;
+line-height: 110px;
+font-size: 85px;
+color: #000;
+text-align: center;
+}
+
+

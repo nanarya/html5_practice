@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="ja-jp">
+<head>
+<meta charset="utf-8">
+<title>ドラッグ＆ドロップで追加できるカート</title>
+<link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>商品をカートにドラッグ＆ドロップしてください</h1>
+    <ul class="item-list">
+        <li class="item" data-price="80000">
+            <div class="image"><img src="img/item_display.png" alt="ディスプレイ"></div>
+            <div class="name">ディスプレイ</div>
+            <span class="price">80,000円</span>
+        </li>
+        <li class="item" data-price="120000">
+            <div class="image"><img src="img/item_pc.png" alt="デスクトップパソコン"></div>
+            <div class="name">デスクトップパソコン</div>
+            <span class="price">120,000円</span>
+        </li>
+        <li class="item" data-price="10000">
+            <div class="image"><img src="img/item_hdd.png" alt="HDD"></div>
+            <div class="name">HDD</div>
+            <span class="price">10,000円</span>
+        </li>
+        <li class="item" data-price="6000">
+            <div class="image"><img src="img/item_keybord.png" alt="キーボード"></div>
+            <div class="name">キーボード</div>
+            <span class="price">6,000円</span>
+        </li>
+        <li class="item" data-price="6000">
+            <div class="image"><img src="img/item_router.png" alt="ルーター"></div>
+            <div class="name">ルーター</div>
+            <span class="price">6,000円</span>
+        </li>
+    </ul>
+
+    <div class="cart" id="cart">
+        <div class="total">まだ商品がありません</div>
+        <ul class="list"></ul>
+    </div>
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="cart.js"></script>
+
+</body>
+</html>

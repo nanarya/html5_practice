@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/*********************
+ *  Bootstrap Sample
+ *********************/
+/*
+ * md 以上のサイズを基本とする
+ * sm,xs サイズは、本ファイル下部に記述
+ */
+/* IEの　Helvetica　問題に対応するために、font-familyを上書きする */
+body {
+	font-family: "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, 'ＭＳ Ｐゴシック', sans-serif;
+}
+/******
+ * ヘッダータイトル、ナビの設定
+ */
+/* ナビのデザインをカスタマイズ　文字を大きく、タイトルを画像にして、縦幅広がったのにも合わせる */
+
+/* タイトル画像の縦位置を調整する */
+#mdn-header h1 {
+	font-size: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#mdn-header .navbar-header h1 {
+	padding-top:18px;
+	padding-bottom:12px;
+	margin-left:15px;
+}
+#mdn-header .navbar-nav > li > a {
+	height: 60px;
+	font-size: 15px;
+	padding-top: 20px;
+}
+
+/* 文字サイズを大きくしたので、アイコンの位置を調整する */
+#mdn-header .glyphicon {
+	top: 2px;
+	margin-right: 4px;
+}
+
+/* ナビボタンの右端がブラウザ右端にくっついているので、少し距離を取る */
+#mdn-header .navbar-nav.navbar-right:last-child {
+	margin-right: 0px;
+}
+
+/******
+ * メインコンテンツ
+ */
+
+/* 上部固定ナビの縦幅の分だけ、メインコンテンツを下げる */
+#mdn-main {
+	margin-top:60px;
+}
+
+/* 背景色設定 */
+#mdn-area-top {
+	background:#E9E2D3;
+}
+
+/* APPボタン Bootstrapで用意されているサイズよりも大きくしたいので、ここで設定 */
+.mdn-box-applink {
+	margin-top:200px;
+	text-align: center;
+	padding:50px 0 40px;
+}
+.mdn-box-applink .btn {
+	width: 225px;
+	font-size: 22px;
+	padding: 16px 30px 16px 70px;
+	position: relative;
+	font-weight:bold;
+}
+.mdn-box-applink .btn .glyphicon  {
+	position: absolute;
+	top: 41%;
+	margin-left: -45px;
+}
+
+/* アイフォンのモック画像*/
+#mdn-box-moc img {
+	margin-top:50px;
+	padding-bottom:50px;
+}
+
+/**
+ * 機能紹介エリア
+ */
+#mdn-area-info > div > h1 {
+	margin-top:50px;
+}
+#mdn-area-info > div > .lead {
+	margin-top:30px;
+	color:#101010;
+}
+#mdn-area-info > div > .alert {
+	margin-top:30px;
+}
+#mdn-area-tab {
+	margin-top:50px;
+}
+
+/* アラート中身 */
+#mdn-area-info > div > .alert {
+	position:relative;
+	padding-right:0;
+}
+#mdn-area-info > div > .alert a {
+	position:absolute;
+	top:15px;
+	right:15px;
+}
+#mdn-area-info > div > .alert h1{
+	margin-top:10px;
+}
+
+/* タブコンテンツ */
+#mdn-area-tab .tab-content {
+	margin-top:50px;
+}
+
+/* 料金テーブル */
+#mdn-area-info table th {
+	width:50%;
+	background:#FCF8E3;
+}
+
+/**
+ * コンタクトフォーム
+ */
+#mdn-area-contact {
+	margin-top:50px;
+	border-top:3px solid #E9E2D3;
+}
+#mdn-area-contact .row {
+	margin-right:0;
+	margin-left:0;
+}
+#mdn-area-contact > h1 {
+	margin-top:50px;
+
+}
+#mdn-area-contact > h1 + div {
+	margin-top:30px;
+}
+
+/**
+ * フッター
+ */
+#mdn-footer {
+	color:#FFF;
+	padding:8px 0;
+	margin-top:50px;
+}
+#mdn-footer .glyphicon {
+	margin-right:5px;
+}
+
+/******
+ * レスポンシブ
+ */
+/* mdレイアウト */
+@media (max-width: 1199px) {
+}
+/* smレイアウト */
+@media (max-width: 991px) {
+	#mdn-box-moc img {
+		padding-bottom:0;
+	}
+	.mdn-box-applink {
+		margin-top:0;
+		padding-top:0;
+		padding-bottom:80px;;
+	}
+}
+/* xs レイアウト */
+@media (max-width: 767px) {
+	#mdn-main {
+		margin-top: 50px;
+	}
+	#mdn-header h1 img {
+		height:20px;
+	}
+	#mdn-area-top {
+		padding-top: 50px;
+	}
+	.mdn-box-applink {
+		padding-bottom:50px;
+	}
+	#mdn-area-contact form > div.row {
+		margin-right:15px;
+		margin-left:15px;
+	}
+}

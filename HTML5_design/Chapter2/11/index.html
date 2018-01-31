@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>お絵かきアプリサンプル</title>
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+<canvas width="400" height="400"></canvas>
+<div class="tool">
+    <div class="btns">
+        <div class="btn mode pen"    data-mode="pen"   ></div>
+        <div class="btn mode eraser" data-mode="eraser"></div>
+    </div>
+    <div class="btns">
+        <div class="btn size small"  data-size="small"></div>
+        <div class="btn size medium" data-size="medium"></div>
+        <div class="btn size large"  data-size="large"></div>
+    </div>
+    <div class="palette">
+        <div class="color" style="background-color: #000;" data-color="#000"></div>
+        <div class="color" style="background-color: #fff;" data-color="#fff"></div>
+        <div class="color" style="background-color: #f09;" data-color="#f09"></div>
+        <div class="color" style="background-color: #90f;" data-color="#90f"></div>
+        <div class="color" style="background-color: #00f;" data-color="#00f"></div>
+        <div class="color" style="background-color: #09f;" data-color="#09f"></div>
+        <div class="color" style="background-color: #0f0;" data-color="#0f0"></div>
+        <div class="color" style="background-color: #ff0;" data-color="#ff0"></div>
+        <div class="color" style="background-color: #f90;" data-color="#f90"></div>
+        <div class="color" style="background-color: #f00;" data-color="#f00"></div>
+    </div>
+    <div class="sample"></div>
+</div>
+<script src="jquery.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

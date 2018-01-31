@@ -1,0 +1,43 @@
+<!doctype html>
+<head>
+  <meta charset="utf=8">
+  <title>sample</title>
+  <link rel="stylesheet" href="css/fixed-positioning.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+<body>
+<!-- 背景多重スクロール -->
+<div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:-25000px 1000px;"></div>
+<div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:-15000px -700px;"></div>
+<div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:-5000px -500px;"></div>
+<!-- 下の色と幅が伸びるバー -->
+<div id="progress" data-0="width:0%;background:hsl(200, 100%, 50%);" data-end="width:100%;backgroundhsl(920, 100%, 50%);"></div>
+<!-- 回転→フェードアウトする見出し -->
+<div id="intro" data-0="opacity:1; top:3%; transform:rotate(0deg); tramsform-origin:0 0;" data-500="opacity:0; top:-10%; transform:rotate(-90deg);">
+  <h1>ページタイトルが入ります</h1>
+  <h2>サブタイトルが入ります。</h2>
+  <p>スクロールで画面が動きます。</p>
+</div>
+<!-- イン→小→回転→大→アウト　SVG私用 -->
+<div id="transform" data-500="transform:scale(0) rotate(0deg);" data-1000="transform:scale(1) rotate(1440deg); opacity:1;" data-1600="" data-1700="transform:scale(5) rotate(3240deg);opacity:0;">
+  <h2>SVG画像です。</h2>
+  <img src="img/svg.svg" width="440" height="440" alt="svgサンプル">
+</div>
+<!-- イン→下から→停止→上に→アウト -->
+<div id="properties" data-1700="top:100%;" data-2000="top:0%;" data-2500="display:block;" data-2900="top:-100%; display:none;">
+  <h2>スクロールで変化したい部分は、全て数値で指定してください</h2>
+  <p>width, height, padding, font-size, z-index, などなど。</p>
+</div>
+<div id="easing_wrapper" data-0="display:none;" data-2900="display:block;" data-4950="background:rgba(0, 0, 0, 0); color:rgb(0, 0, 0);" data-6000="background:rgba(0, 0, 0, 1); color:rgb(255, 255, 255);">
+  <div id="easing" data-2900="left[bounce]:100%" data-4950="left:25%;">
+    <h2>easing</h2>
+    <p>できます！</h2>
+      <p>このページは暗くとか<span data-4950="color:rgb(0, 0, 0);" data-6000="color:rgb(255, 255, 0);">文字は明るくとか</span></p>
+      <p data-6000="opacity:0; font-size:100%;" data-7000="opacity:1; font-size:150%;">このほかにもeasingのカスタマイズができます。</p>
+  </div>
+</div>
+<script src="js/skrollr.min.js"></script>
+<script>
+  skrollr.init();
+</script>
+</body>

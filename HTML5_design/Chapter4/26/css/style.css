@@ -1,0 +1,316 @@
+/* IMPORT RESET */
+@import url("reset.css");
+
+/* IMPORT 12 COLUMN RESPONSIVE GS */
+@import url("responsive.gs.12col.css");
+
+
+
+body{
+color:#333;
+background:#fff url(../images/bg.png);
+font-size:62.5%;
+font-family: " メイリオ",Meiryo,Osaka," ヒラギノ角ゴ ProW3","Hiragino Kaku Gothic Pro"," ＭＳ Ｐゴシック","MSPGothic",sans-serif;
+}
+
+p{
+line-height:1.8;
+}
+
+/*================================
+HEADER
+================================*/
+#siteID {
+	padding: 24px 0 10px 15px;
+}
+
+#siteID h1 {
+	font-size: 4em;
+	font-weight: 400;
+	font-family: 'Marcellus', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+#siteID .description {
+	font-size: 1.4em;
+}
+
+
+
+
+/*================================
+画像のサイズを100%にする
+================================*/
+img{
+max-width: 100%;
+height: auto;
+width /***/:auto;　/*IE8のみ適用*/
+}
+
+
+
+
+
+/*===============================
+contents
+===============================*/
+.box {
+background: #fff;
+border:1px solid #999;
+padding:20px 15px 15px;
+margin-bottom:20px;
+font-size:1.5em;
+position:relative;
+word-wrap:break-word;
+}
+
+.box:after {
+display: block;
+clear: both;
+height: 0;
+content:"";
+}
+
+.box h1{
+font-size:2.0em;
+border-bottom:1px dashed #999;
+margin-bottom:20px;
+padding-left:10px;
+color:#c00;
+line-height:1.3;
+}
+
+.box h2{
+font-size:1.8em;
+background:#EFEFEF;
+border-left:10px solid #c00;
+padding:5px 10px;
+margin-left:-15px;
+margin-bottom:20px;
+line-height:1.3;
+}
+
+.box h3{
+font-size:1.7em;
+margin-bottom:20px;
+padding-left:10px;
+line-height:1.3;
+}
+
+.box p{
+margin-bottom:15px;
+}
+
+
+
+/*===============================
+リンクの装飾
+===============================*/
+/*コンテンツ内の通常リンク*/
+.box a{
+color:#e4007f;
+text-decoration:none;
+}
+
+.box a:hover{
+color:#090;
+text-decoration:underline;
+}
+
+
+
+
+
+/*===============================
+写真の装飾
+===============================*/
+/* シャドウを使った写真の装飾 */
+.box img{
+background:#fff;
+padding:5px;
+box-shadow:0 1px 3px #aaa;
+-webkit-box-shadow:0 1px 3px #aaa;
+-moz-box-shadow:0 1px 3px #aaa;
+behavior: url(PIE.htc);
+}
+
+.alignleft {
+display: block;
+float: left;
+margin-right: 15px;
+margin-bottom:1em;
+
+}
+.aligncenter {
+display: block;
+margin:0 auto;
+}
+.alignright {
+display: block;
+float: right;
+margin-left: 15px;
+margin-bottom:1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*================================
+詳細ボタン用
+================================*/
+p.more{
+margin:40px 150px 10px;
+}
+
+p.more a{
+position:relative;
+display:block;
+padding:5px 15px 5px;
+color:#fff;
+text-align:center;
+text-decoration:none;
+background:#244386;
+border:1px solid #e8e8e8;
+/*角丸*/
+border-radius: 8px;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+/*ボックスシャドウ*/
+box-shadow: 2px 2px 4px #aaa;
+-webkit-box-shadow: 2px 2px 4px #aaa;
+-moz-box-shadow: 2px 2px 4px #aaa;
+/*グラデーション*/
+background:#cc0000;
+background: -webkit-gradient(#cc0000, #EF6767);
+background: -moz-linear-gradient(#cc0000, #EF6767);
+background: linear-gradient(#cc0000, #EF6767);
+-pie-background: linear-gradient(#cc0000, #EF6767);
+behavior: url(PIE.htc);
+}
+
+p.more a:hover{
+background:#cc0000;
+color:#FF0;
+background: -webkit-gradient(#cc0000, #EF6767);
+background: -moz-linear-gradient(#EF6767,#cc0000);
+background: linear-gradient(#EF6767,#cc0000);
+-pie-background: linear-gradient(#EF6767,#cc0000);
+behavior: url(PIE.htc);
+text-decoration:none;
+}
+
+
+
+
+/*================================
+SIDEBARの装飾
+================================*/
+#sidebar{
+font-size:1.3em;
+}
+
+.sideinfo {
+background:#fff;
+border:1px solid #999;
+padding:15px;
+margin-bottom:30px;
+
+}
+
+.sideinfo h4,
+.ad h4{
+font-size:1.6em;
+border-bottom:2px solid #999;
+margin-bottom:15px;
+}
+
+.sideinfo h5{
+font-weight:bold;
+font-size:1.2em;
+}
+
+
+.newentry img{
+float:left;
+margin:0 7px 5px 0;
+border:1px solid #999;
+padding:3px;
+}
+
+.newentry dd{
+margin-top:10px;
+}
+
+.newentry h5 a{
+color:#069;
+text-decoration:none;
+}
+
+.newentry h5 a:hover{
+color:#c00;
+}
+
+.newentry p{
+margin-bottom:15px;
+}
+
+.icon-file-text-alt{
+font-size:1.1em;
+margin:0 5px 0;
+}
+
+
+/*================================
+FOOTER
+================================*/
+#footerContainer{
+	margin-top:20px;
+	background:#000;
+}
+
+#footerContainer p{
+	text-align:center;
+	color:#fff;
+	padding:10px 0;
+}
+
+
+
+
+@media ( max-width : 768px ) {
+
+
+/*コンテンツ領域のサイドの余白の設定*/
+.span_8,
+.span_4{
+padding-left:10px;
+padding-right:10px;
+}
+
+/*サイトロゴサイズ*/
+#siteID h1 {
+	font-size: 3em;
+}
+
+
+/*詳細ボタンのサイズ設定*/
+p.more{
+margin:20px 20px 0;
+}
+
+p.more a{
+	padding:10px 0;
+	font-size:1.3em;
+}
+
+
+
+
+}

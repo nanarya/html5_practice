@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+xmlns:gap = "http://phonegap.com/ns/1.0"
+id        = "com.phonegap.example"
+versionCode="10" 
+version   = "1.0.0">
+
+<!-- versionCode is optional and Android only -->
+
+<name>アプリケーションの名前</name>
+
+<description>
+アプリケーションの説明
+</description>
+
+<author href="制作者URL" email="制作者e-mail">
+制作者名 
+</author>
+
+<!-- プラットフォームビルドの選択 -->
+<gap:platform name="ios" />
+<gap:platform name="android" />
+
+<!-- 使用するPhoneGapのバージョン -->
+<preference name="phonegap-version" value="3.1.0" />
+
+<!-- デバイスの向き：指定可能な値は、default landscape portrait
+ default では、横（landscape）と縦（portrait）の両方が有効 -->
+<preference name="orientation" value="portrait" />
+
+<!-- フルスクリーンにするかどうかを true / false で指定
+上部のステータスバーを非表示にします。デフォルトは false -->
+<preference name="fullscreen" value="true" />
+
+</widget>

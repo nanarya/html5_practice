@@ -1,0 +1,205 @@
+.background {
+    position: relative;
+    height: 400px;
+    background-color: #f3c7d0;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    overflow: hidden;
+}
+
+.snow-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.santa {
+    position: absolute;
+    top: 130px;
+    left: 10%;
+    width: 176px;
+    height: 50px;
+    background-image: url("../images/santa.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    -webkit-animation: santa-x 15s linear infinite,
+        santa-y 800ms alternate infinite;
+    -o-animation: santa-x 15s linear infinite,
+        santa-y 800ms alternate infinite;
+    animation: santa-x 15s linear infinite,
+        santa-y 800ms alternate infinite;
+}
+
+.foreground {
+    position: relative;
+    height: 200px;
+}
+
+.place {
+    position: absolute;
+    top: -166px;
+    left: 50%;
+}
+
+.place-1 {margin-left: -400px;}
+.place-2 {margin-left: -260px;}
+.place-3 {margin-left: -20px;}
+.place-4 {margin-left: 120px;}
+.place-5 {margin-left: 260px;}
+
+.house,
+.house-shadow{
+    position: relative;
+    display: block;
+    width: 149px;
+    height: 186px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+
+.house {
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+}
+
+.house:hover {
+    -webkit-animation: chimney 800ms ease-out 500ms infinite;
+    -o-animation: chimney 800ms ease-out 500ms infinite;
+    animation: chimney 800ms ease-out 500ms infinite;
+}
+
+
+.house-shadow {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -186px;
+    background-position: 0 0;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform: skewX(45deg);
+    -moz-transform: skewX(45deg);
+    -ms-transform: skewX(45deg);
+    -o-transform: skewX(45deg);
+    transform: skewX(45deg);
+}
+
+.house:hover + .house-shadow {
+    -webkit-animation: chimney-shadow 800ms ease-out 500ms infinite;
+    -o-animation: chimney-shadow 800ms ease-out 500ms infinite;
+    animation: chimney-shadow 800ms ease-out 500ms infinite;
+    -webkit-transform: skewX(45deg) scaleY(1.1);
+    -moz-transform: skewX(45deg) scaleY(1.1);
+    -ms-transform: skewX(45deg) scaleY(1.1);
+    -o-transform: skewX(45deg) scaleY(1.1);
+    transform: skewX(45deg) scaleY(1.1);
+}
+
+.floor-1 .house { background-image: url("../images/house_1f.png"); }
+.floor-2 .house { background-image: url("../images/house_2f.png"); }
+.floor-3 .house { background-image: url("../images/house_3f.png"); }
+.floor-1 .house:hover { background-image: url("../images/house_1f_hover.png"); }
+.floor-2 .house:hover { background-image: url("../images/house_2f_hover.png"); }
+.floor-3 .house:hover { background-image: url("../images/house_3f_hover.png"); }
+.floor-1 .house-shadow { background-image: url("../images/house_1f_shadow.png"); }
+.floor-2 .house-shadow { background-image: url("../images/house_2f_shadow.png"); }
+.floor-3 .house-shadow { background-image: url("../images/house_3f_shadow.png"); }
+
+@-webkit-keyframes santa-x {
+    from { left: -176px; }
+    to { left: 100%; }
+}
+
+@-moz-keyframes santa-x {
+    from { left: -176px; }
+    to { left: 100%; }
+}
+
+@-o-keyframes santa-x {
+    from { left: -176px; }
+    to { left: 100%; }
+}
+
+@keyframes santa-x {
+    from { left: -176px; }
+    to { left: 100%; }
+}
+
+@-webkit-keyframes santa-y {
+    from { top: 100px; }
+    to { top: 120px; }
+}
+
+@-moz-keyframes santa-y {
+    from { top: 100px; }
+    to { top: 120px; }
+}
+
+@-o-keyframes santa-y {
+    from { top: 100px; }
+    to { top: 120px; }
+}
+
+@keyframes santa-y {
+    from { top: 100px; }
+    to { top: 120px; }
+}
+
+@-webkit-keyframes chimney {
+    0% { -webkit-transform: scaleX(1) scaleY(1); }
+    60% { -webkit-transform: scaleX(1.05) scaleY(0.95); }
+    80% { -webkit-transform: scaleX(0.95) scaleY(1.15); }
+}
+
+@-moz-keyframes chimney {
+    0% { -moz-transform: scaleX(1) scaleY(1); }
+    60% { -moz-transform: scaleX(1.05) scaleY(0.95); }
+    80% { -moz-transform: scaleX(0.95) scaleY(1.15); }
+}
+
+@-o-keyframes chimney {
+    0% { -o-transform: scaleX(1) scaleY(1); }
+    60% { -o-transform: scaleX(1.05) scaleY(0.95); }
+    80% { -o-transform: scaleX(0.95) scaleY(1.15); }
+}
+
+@keyframes chimney {
+    0% { transform: scaleX(1) scaleY(1); }
+    60% { transform: scaleX(1.05) scaleY(0.95); }
+    80% { transform: scaleX(0.95) scaleY(1.15); }
+}
+
+@-webkit-keyframes chimney-shadow {
+    0% { -webkit-transform: skewX(45deg) scaleX(1) scaleY(1.1); }
+    60% { -webkit-transform: skewX(45deg) scaleX(1.05) scaleY(1.05); }
+    80% { -webkit-transform: skewX(45deg) scaleX(0.95) scaleY(1.25); }
+}
+
+@-moz-keyframes chimney-shadow {
+    0% { -moz-transform: skewX(45deg) scaleX(1) scaleY(1.1); }
+    60% { -moz-transform: skewX(45deg) scaleX(1.05) scaleY(1.05); }
+    80% { -moz-transform: skewX(45deg) scaleX(0.95) scaleY(1.25); }
+}
+
+@-o-keyframes chimney-shadow {
+    0% { -o-transform: skewX(45deg) scaleX(1) scaleY(1.1); }
+    60% { -o-transform: skewX(45deg) scaleX(1.05) scaleY(1.05); }
+    80% { -o-transform: skewX(45deg) scaleX(0.95) scaleY(1.25); }
+}
+
+@keyframes chimney-shadow {
+    0% { transform: skewX(45deg) scaleX(1) scaleY(1.1); }
+    60% { transform: skewX(45deg) scaleX(1.05) scaleY(1.05); }
+    80% { transform: skewX(45deg) scaleX(0.95) scaleY(1.25); }
+}

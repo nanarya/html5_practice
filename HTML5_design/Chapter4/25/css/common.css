@@ -1,0 +1,310 @@
+@font-face {
+  font-family: "umeFont";
+  src: url("../font/ume-min.eot?") format('eot'),
+       url("../font/ume-min.woff") format('woff');
+}
+* {
+margin: 0;
+padding: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+display: block;
+}
+html {
+width: 100%;
+}
+body {
+line-height: 1;
+color: #333;
+font-family: "umeFont";
+background-color: #FFF;
+font-size: 14px;
+}
+ol, ul {
+list-style: none;
+}
+section {
+width: 800px;
+min-height: 50px;
+padding: 40px;
+z-index: 2;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+-o-box-sizing: border-box;
+box-sizing: border-box;
+pointer-events: auto;
+/*
+border: 1px dotted #000;
+*/
+}
+section:not(.active) {
+opacity: .5;
+}
+
+.nav {
+position: absolute;
+z-index: 999;
+bottom: 10px;
+left: 10px;
+font-size: 100%;
+}
+.nav li {
+list-style: none;
+float: left;
+padding: 0 5px;
+}
+.nav li a {
+position: relative;
+color: #333;
+text-decoration: none;
+border-bottom: 1px solid #F70;
+}
+.nav li a:hover {
+color: #000;
+}
+.hint {
+position: absolute;
+width: 100%;
+bottom: 20px;
+right: 0;
+font-size: 16px;
+background-color: rgba(0, 0, 0, .75);
+padding: 20px 10px;
+text-align: center;
+color: #FFF;
+display: none;
+z-index: 99;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+/* TOP
+-------------------------------------- */
+#home {
+height: 280px;
+width: 550px;
+}
+#home h1 {
+font-size:65px;
+font-weight: normal;
+position: absolute;
+left: 0;
+bottom: 105px;
+z-index: 10;
+}
+#home p {
+font-size: 18px;
+position: absolute;
+left: 0;
+bottom: 70px;
+z-index: 10;
+}
+#home .home-nav {
+position: absolute;
+right: 0;
+top: 0;
+}
+#home .home-nav li {
+margin-bottom: 1em;
+}
+#home .home-nav a {
+color: #333;
+font-size: 15px;
+border-left: 2px solid #f90;
+padding-left: 8px;
+text-decoration: none;
+}
+#home .home-nav a:hover {
+color: #000;
+}
+#home:after {
+content: '';
+display: block;
+width: 8000px;
+height: 1000px;
+background: #f90;
+position: absolute;
+left: 50%;
+top: 50%;
+margin-top: 30px;
+margin-left: -4000px;
+z-index: 1;
+}
+#home:before {
+content: '';
+display: block;
+width: 8000px;
+height: 1500px;
+background: #8dcadf;
+position: absolute;
+left: 50%;
+top: 50%;
+margin-left: -4000px;
+margin-top: 1000px;
+z-index: 1;
+}
+section#home:not(.active) {
+opacity: 1;
+}
+section#home:not(.active) ul,
+section#home:not(.active) h1,
+section#home:not(.active) p {
+opacity: .5;
+}
+
+/* 奥行き #depth
+-------------------------------------- */
+#depth h1 {
+font-size: 18px;
+text-align: center;
+position: relative;
+z-index: 100;
+}
+#depth h1 strong {
+border-radius: 10px;
+background: #333;
+border: 1px solid #000;
+color: #FFF;
+padding: 3px;
+margin: 0 3px;
+}
+
+/* パン #pan
+-------------------------------------- */
+#pan {
+/*border: 1px solid #000;*/
+}
+#pan h1 {
+font-size: 18px;
+text-align: center;
+position: relative;
+z-index: 100;
+}
+#pan h1 strong {
+font-size: 48px;
+font-weight: normal;
+}
+
+/* パン #rotation
+-------------------------------------- */
+#rotation {
+/*border: 1px solid #000;*/
+}
+#rotation h2 {
+font-size: 18px;
+text-align: center;
+position: relative;
+z-index: 100;
+}
+#rotation h2 strong {
+font-size: 30px;
+font-weight: normal;
+}
+section#pan:not(.active) {
+opacity: 1;
+}
+
+/* 拡大縮小 #scaling
+-------------------------------------- */
+#scaling {
+/*border: 1px solid #000;*/
+}
+#scaling h1 {
+font-size: 30px;
+text-align: center;
+position: relative;
+z-index: 100;
+}
+#scaling h1 strong {
+font-size: 55px;
+font-weight: normal;
+}
+
+/* 画像貼り付け #image
+-------------------------------------- */
+#image {
+/*border: 1px solid #000;*/
+text-align: center;
+}
+#image h1 {
+font-size: 48px;
+position: relative;
+z-index: 100;
+font-weight: normal;
+}
+#image h1 span {
+font-size: 72px;
+}
+#image p {
+font-size: 36px;
+margin-bottom: 10px;
+}
+
+/* つなぎ #more
+-------------------------------------- */
+#more {
+/*border: 1px solid #000;*/
+text-align: center;
+}
+#more h1 {
+font-size: 48px;
+position: relative;
+z-index: 100;
+font-weight: normal;
+}
+
+
+/* 普通ぽいページ #usually
+-------------------------------------- */
+#usually {
+border: 1px solid #888;
+border-radius: 30px;
+box-shadow:
+0 0 30px rgba(0,0,0,0.25),
+0 0 30px rgba(0,0,0,0.1) inset;
+font-size: 18px;
+background: #FFF;
+}
+#usually h1 {
+font-size: 48px;
+font-weight: normal;
+margin-bottom: 40px;
+}
+#usually h1 span {
+font-size: 28px;
+}
+#usually img {
+float: right;
+border: 1px solid #F90;
+margin: 0 2em 40px 0;
+}
+#usually ul {
+margin: 0 0 20px 2em;
+}
+#usually ul li {
+list-style: disc;
+list-style-position: inside;
+margin-top: .8em;
+}
+#usually p {
+clear: both;
+line-height: 1.6;
+margin-bottom: 1em;
+}
+section#usually:not(.active) {
+opacity: .2;
+}
+
+
+/* スライド表示解除時スタイル
+-------------------------------------- */
+article:not([class^="jmpress step"]) * {
+}
+article:not([class^="jmpress step"]) #home:after {
+content: none;
+}
+article:not([class^="jmpress step"]) #home:before {
+content: none;
+}

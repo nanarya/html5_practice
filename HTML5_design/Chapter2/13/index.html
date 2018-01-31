@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="ja-jp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>現在地周辺の地図を表示する</title>
+<link rel="stylesheet" href="map.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div id="start" class="section">
+        <p>位置情報を取得しています</p>
+    </div>
+
+    <div id="input" class="section hide">
+        <div>緯度:<input type="text" id="latitude" value="" /></div>
+        <div>経線:<input type="text" id="longitude" value="" /></div>
+        <input type="submit" id="button" value="地図を表示する" />
+    </div>
+
+    <div id="map" class="section hide"></div>
+</div>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=YOUR-API-KEY&sensor=true"></script>
+<script type="text/javascript" src="map.js"></script>
+
+</body>
+</html>

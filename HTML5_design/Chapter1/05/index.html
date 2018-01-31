@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>skrollr - みんなのパララックス</title>
+
+<link href="css/fixed-positioning.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- 背景多重スクロール -->
+<div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:-500px -10000px;"></div>
+<div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:-500px -8000px;"></div>
+<div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:-500px -6000px;"></div>
+
+<!-- 下の色と幅が伸びるバー -->
+<div id="progress" data-0="width:0%; background:hsl(200, 100%, 50%);" data-end="width:100%; background:hsl(920, 100%, 50%);">
+</div>
+
+<!-- 回転→フェードアウトする見出し -->
+<div id="intro" data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;" data-500="opacity:0;top:-10%;transform:rotate(-90deg);">
+<h1><a href="https://github.com/Prinzhorn/skrollr">skrollr</a></h1>
+<h2>みんなのパララックス</h2>
+<p>スクロールしてみてください (｡◕ ∀ ◕｡)</p>
+</div>
+
+<!-- イン→小→回転→大→アウト SVG使用 -->
+<div id="transform" data-500="transform:scale(0) rotate(0deg);" data-1000="transform:scale(1) rotate(1440deg);opacity:1;" data-1600="" data-1700="transform:scale(5) rotate(3240deg);opacity:0;">
+<h2>IllustratorのパスでSVGつくりました</h2>
+<p>拡大・回転してもきれいです。</p>
+<img src="img/svg.svg" width="440" height="440" alt="svgサンプル">
+</div>
+
+<!-- イン→下から→停止→上に→アウト -->
+<div id="properties" data-1700="top:100%;" data-2000="top:0%;" data-2500="display:block;" data-2900="top:-100%;display:none;">
+<h2>スクロールで変化したい部分は、すべて数値で設定してください</h2>
+<p>width, height, padding, font-size, z-index, などなど…</p>
+</div>
+
+<!-- 
+イン→右から→停止→背景黒く→文字色変更→
+「you can set easings…」出現→「you can set easings…」文字サイズ変更
+-->
+<div id="easing_wrapper" data-0="display:none;" data-2900="display:block;" data-4950="background:rgba(0, 0, 0, 0);color:rgb(0,0,0);" data-6000="background:rgba(0,0,0,1);color:rgb(255,255,255);">
+<div id="easing" data-2900="left[bounce]:100%" data-4950="left:25%;">
+<h2>easing</h2>
+<p>できます！</p>
+<p>このページは暗くとか <span data-4950="color:rgb(0,0,0);" data-6000="color:rgb(255,255,0);">文字は明るくとか…</span></p>
+<p data-6000="opacity:0;font-size:100%;" data-7000="opacity:1;font-size:150%;">このほかにもeasingのカスタマイズができます。</p>
+</div>
+</div>
+
+<script src="js/skrollr.min.js"></script>
+
+<script>
+skrollr.init();
+</script>
+
+</body>
+
+</html>
