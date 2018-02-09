@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf=8">
+  <title>sample</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+  <h1><img src="img/logo.png" alt="ねこのひみつ" width="295" height="44"></h1>
+
+  <!-- タブ -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">タブ1</a></li>
+    <li><a href="#tab2" data-toggle="tab">タブ2</a></li>
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown">ドロップダウンです<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#dropdown1" data-toggle="tab">ドロップダウン1</a></li>
+        <li><a href="#dropdown2" data-toggle="tab">ドロップダウン2</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- パネルの内容 -->
+  <div class="tab-content">
+
+    <!-- タブ1 -->
+    <div class="tab-pane fade in active" id="tab1">
+      <img src="img/1.png" alt="ねこのひみつタイトル" width="641" height="369">
+    </div>
+
+    <!-- タブ2 -->
+    <div class="tab-pane fade" id="tab2">
+      <h2><img src="img/2_text.png" alt="チンチラ" width="149" height="33"></h2>
+      <img src="img/2_img.png" alt="イラスト：チンチラ" width="194" height="247">
+      <dl>
+        <dt>原産国</dt><dd>イギリス</dd>
+        <dt>発祥年</dt><dd>1880年代</dd>
+        <dt>原種</dt><dd>ペルシャ猫</dd>
+        <dt>毛の種類</dt><dd>長毛</dd>
+        <dt>毛の色</dt><dd>ゴールデン、シルバーなど</dd>
+        <dt>目の色</dt><dd>グリーン</dd>
+      </dl>
+    </div>
+
+    <!-- ドロップダウン1 -->
+    <div class="tab-pane fade" id="dropdown1">
+      <img src="img/3_img.png" alt="イラスト：寝ているチンチラ" width="624" height="194">
+      <h2><img src="img/3_text.png" alt="ゴージャスな毛並みの長毛種。" width="531" height="37"></h2>
+      <p>愛らしさと、気品を備え持つ猫。
+      触れると、フワフワの毛並みに癒されること間違いなしだが、その分シャンプーやブラッシング等のメンテナンスが欠かせない。
+      短毛種とは違い、長毛種は自力でその美しさを保つことは出来ない。</p>
+    </div>
+
+    <!-- ドロップダウン2 -->
+    <div class="tab-pane fade" id="dropdown2">
+
+      <div class="item1">
+        <h3><img src="img/4_text1.png" alt="体格" width="79" height="37"></h3>
+        <p>小さい。
+        胴は短く、足も太短い。
+        鼻は低めで目が大きい。
+        とにかく毛がフッサフサ。</p>
+      </div>
+
+      <div class="item2">
+        <h3><img src="img/4_text2.png" alt="頭脳" width="77" height="36"></h3>
+        <p>なかなか賢い。
+        トイレもすぐに覚える。
+        人間の行動をよく見ているので、ドアなども簡単に開けてしまう。</p>
+      </div>
+
+      <hr>
+
+      <div class="item3">
+        <h3><img src="img/4_text3.png" alt="運動量" width="114" height="37"></h3>
+        <p>長毛種なので、おっとりしてそうだが、実は活発！
+        ジャンプ力も高く、昇竜拳が得意。</p>
+      </div>
+
+      <div class="item4">
+        <h3><img src="img/4_text4.png" alt="性格" width="79" height="37"></h3>
+        <p>気が強く、警戒心が強いが、気分が良いとゴロゴロ甘えすりよってくる。</p>
+      </div>
+
+    </div><!-- /#dropdown2 -->
+
+  </div><!-- /.tab-content -->
+
+  <footer>
+    <small>©Copyright 2013 ねこのひみつ</small>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

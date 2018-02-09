@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=640, initial-scale=0.5" />
+<meta name="description" content="form sample." />
+<title>form</title>
+<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+<section id="wrapper">
+
+<form id="form" method="POST" action="hogehoge">
+<h1 id="form__title">クラスTシャツ 注文フォーム</h1>
+<div class="form__section">
+<h2 class="form__header">お名前</h2>
+<div class="form__input">
+<input type="text" name="name" placeholder="山田太郎" />
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">電話番号</h2>
+<div class="form__input">
+<input type="tel" name="tel" placeholder="XXX-XXXX-XXXX"/>
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">メールアドレス</h2>
+<div class="form__input">
+<input type="email" name="email" placeholder="hoge@example.com" />
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">生年月日</h2>
+<div class="form__input">
+<input type="date" name="birth" />
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">注文数</h2>
+<div class="form__input">
+<input type="number" name="count" min="1" max="100" value="0"/>
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">サイズ</h2>
+<div class="form__input">
+<input type="range" name="size" min="0" max="4" step="1" value="2"/>
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">Tシャツの色</h2>
+<div class="form__input">
+<input type="color" name="shirt-color" value="#f00" />
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">Tシャツの図柄</h2>
+<div class="form__input">
+<input type="file" name="image"/>
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<h2 class="form__header">クラスメンバー</h2>
+<div class="form__input">
+<input type="hidden" name="order" value="" />
+<ul class="form__input__order" data-order-name="order"></ul>
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<div class="form__section">
+<div class="form__input">
+<input type="submit" value="送信する"/>
+<!-- /.form__input --></div>
+<!-- /.form__section --></div>
+<!-- /#form --></form>
+<!-- /#wrapper --></section>
+<script src="js/lib/jquery-1.10.2.js"></script>
+<script src="js/lib/jquery-ui-1.10.3.custom.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

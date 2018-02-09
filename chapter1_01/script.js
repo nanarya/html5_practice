@@ -108,7 +108,7 @@ setInterval('xyMove()',10);
 //マウスが動いているか判定
 function xyMove () {
   if(posFlg == 0){
-  mx1 = mx;
+    mx1 = mx;
     my1 = my;
     posFlg = 1;
   }else{
